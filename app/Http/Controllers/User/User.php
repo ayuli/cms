@@ -14,15 +14,16 @@ class User extends Controller
 {
     public function admin($id)
     {
-        echo 'ID'.$id;
+        echo 'ID' . $id;
         echo __METHOD__;
-        $user = UserModel::where(['id'=>$id])->first()->toArray();
+        $user = UserModel::where(['id' => $id])->first()->toArray();
 //        echo '<pre>';
 //        print_r($user);
 //        echo '<pre>';
         dd($user);
 
     }
+
     /** 添加 */
     public function add()
     {
@@ -36,22 +37,25 @@ class User extends Controller
         $insert = UserModel::insert($data);
 
     }
+
     /** 修改 */
     public function update($id)
     {
         $data = [
             'username' => str_random(5)
         ];
-        $update = UserModel::where(['id'=>$id])->update($data);
+        $update = UserModel::where(['id' => $id])->update($data);
         print_r($update);
 
     }
+
     /** 删除 */
     public function delete($id)
     {
-        $delete = UserModel::where(['id'=>$id])->delete();
+        $delete = UserModel::where(['id' => $id])->delete();
         print_r($delete);
     }
+
     /** 展示 */
     public function show()
     {
@@ -60,6 +64,11 @@ class User extends Controller
         $data = [
             'list' => $list, //循环名 list
         ];
-        return view('user.show',$data); // 模板下user show
+        return view('user.show', $data); // 模板下user show
+    }
+
+    public function push()
+    {
+        echo "2";
     }
 }
