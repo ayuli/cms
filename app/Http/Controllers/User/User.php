@@ -71,4 +71,5 @@ class User extends Controller
     {
         echo "2";
     }
+
 }
