@@ -16,5 +16,8 @@ Route::get('/', function () {
 });
 
 // 路由
-Route::get('/user/{id}','User\user@admin');
+Route::get('/user/add','User\user@add');
+Route::get('/user/update/{id}','User\user@update');
+Route::get('/user/delete/{id}','User\user@delete');
+Route::get('/user/show','User\user@show');
 
