@@ -62,4 +62,5 @@ class User extends Controller
         ];
         return view('user.show',$data); // 模板下user show
     }
+
 }
